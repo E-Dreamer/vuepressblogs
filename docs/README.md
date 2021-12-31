@@ -3,8 +3,12 @@ home: true
 heroImage: /logo.png
 heroText: 前端记录
 tagline: 一点一滴都是进步
-actionText: 马上进入 →
-actionLink: /pages/folder1/test1.md
+# actionText: 开始阅读 →
+# actionLink: /guide/index.md
+actions: 
+- text: 开始阅读 →
+  link: /guide/index
+  type: primary
 features:
 - title: 简洁至上
   details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。

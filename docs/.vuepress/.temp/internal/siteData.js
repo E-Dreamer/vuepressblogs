@@ -3,7 +3,15 @@ export const siteData = {
   "lang": "en-US",
   "title": "",
   "description": "",
-  "head": [],
+  "head": [
+    [
+      "link",
+      {
+        "rel": "icon",
+        "href": "/logo.png"
+      }
+    ]
+  ],
   "locales": {
     "/": {
       "lang": "zh-CN",
@@ -16,4 +24,17 @@ export const siteData = {
       "description": "Write down some knowledge"
     }
   }
+}
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updateSiteData) {
+    __VUE_HMR_RUNTIME__.updateSiteData(siteData)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ siteData }) => {
+    __VUE_HMR_RUNTIME__.updateSiteData(siteData)
+  })
 }

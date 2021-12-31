@@ -24,6 +24,28 @@ export const data = {
   },
   "excerpt": "",
   "headers": [],
-  "git": {},
+  "git": {
+    "updatedTime": 1640851969000,
+    "contributors": [
+      {
+        "name": "E-Dreamer",
+        "email": "939902197@qq.con",
+        "commits": 1
+      }
+    ]
+  },
   "filePathRelative": "en/README.md"
+}
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
 }

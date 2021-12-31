@@ -8,8 +8,13 @@ export const data = {
     "heroImage": "/logo.png",
     "heroText": "前端记录",
     "tagline": "一点一滴都是进步",
-    "actionText": "马上进入 →",
-    "actionLink": "/pages/folder1/test1.md",
+    "actions": [
+      {
+        "text": "开始阅读 →",
+        "link": "/guide/index",
+        "type": "primary"
+      }
+    ],
     "features": [
       {
         "title": "简洁至上",
@@ -28,6 +33,28 @@ export const data = {
   },
   "excerpt": "",
   "headers": [],
-  "git": {},
+  "git": {
+    "updatedTime": 1640851969000,
+    "contributors": [
+      {
+        "name": "E-Dreamer",
+        "email": "939902197@qq.con",
+        "commits": 1
+      }
+    ]
+  },
   "filePathRelative": "README.md"
+}
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
 }
