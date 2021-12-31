@@ -3,11 +3,9 @@ home: true
 heroImage: /logo.png
 heroText: 前端记录
 tagline: 一点一滴都是进步
-# actionText: 开始阅读 →
-# actionLink: /guide/index.md
 actions: 
 - text: 开始阅读 →
-  link: /guide/index
+  link: /guide/index.html
   type: primary
 features:
 - title: 简洁至上

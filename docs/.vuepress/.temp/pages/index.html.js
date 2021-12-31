@@ -11,7 +11,7 @@ export const data = {
     "actions": [
       {
         "text": "开始阅读 →",
-        "link": "/guide/index",
+        "link": "/guide/index.html",
         "type": "primary"
       }
     ],
@@ -34,27 +34,14 @@ export const data = {
   "excerpt": "",
   "headers": [],
   "git": {
-    "updatedTime": 1640851969000,
+    "updatedTime": 1640928059000,
     "contributors": [
       {
         "name": "E-Dreamer",
         "email": "939902197@qq.con",
-        "commits": 1
+        "commits": 2
       }
     ]
   },
   "filePathRelative": "README.md"
-}
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
 }

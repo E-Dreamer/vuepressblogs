@@ -7,9 +7,37 @@ export const searchIndex = [
     "extraFields": []
   },
   {
+    "title": "vue3",
+    "headers": [
+      {
+        "level": 2,
+        "title": "区别",
+        "slug": "区别",
+        "children": []
+      }
+    ],
+    "path": "/article/vue.html",
+    "pathLocale": "/",
+    "extraFields": []
+  },
+  {
     "title": "",
     "headers": [],
     "path": "/en/",
+    "pathLocale": "/en/",
+    "extraFields": []
+  },
+  {
+    "title": "vue3",
+    "headers": [
+      {
+        "level": 2,
+        "title": "区别",
+        "slug": "区别",
+        "children": []
+      }
+    ],
+    "path": "/en/article/vue.html",
     "pathLocale": "/en/",
     "extraFields": []
   },
@@ -21,16 +49,3 @@ export const searchIndex = [
     "extraFields": []
   }
 ]
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updateSearchIndex) {
-    __VUE_HMR_RUNTIME__.updateSearchIndex(searchIndex)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ searchIndex }) => {
-    __VUE_HMR_RUNTIME__.updateSearchIndex(searchIndex)
-  })
-}
