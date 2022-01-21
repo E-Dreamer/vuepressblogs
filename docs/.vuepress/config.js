@@ -1,7 +1,7 @@
 /*
  * @Author: E-Dreamer
  * @Date: 2021-12-30 13:41:15
- * @LastEditTime: 2021-12-31 16:30:59
+ * @LastEditTime: 2021-12-31 17:05:03
  * @LastEditors: E-Dreamer
  * @Description:
  */
@@ -21,7 +21,7 @@ const navbar = {
     },
   ],
   en: [
-    { text: 'home', link: '/' },
+    { text: 'home', link: '/en/' },
     {
       text: 'article',
       children: [

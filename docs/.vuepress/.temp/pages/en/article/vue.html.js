@@ -16,8 +16,14 @@ export const data = {
     }
   ],
   "git": {
-    "updatedTime": null,
-    "contributors": []
+    "updatedTime": 1640940059000,
+    "contributors": [
+      {
+        "name": "E-Dreamer",
+        "email": "939902197@qq.con",
+        "commits": 1
+      }
+    ]
   },
   "filePathRelative": "en/article/vue.md"
 }
