@@ -11,11 +11,15 @@
   "author": "筑梦",
   "license": "ISC",
   "devDependencies": {
-    "@vuepress/bundler-vite": "^2.0.0-beta.32",
-    "@vuepress/plugin-back-to-top": "^2.0.0-beta.32",
-    "@vuepress/plugin-docsearch": "^2.0.0-beta.32",
-    "@vuepress/plugin-nprogress": "^2.0.0-beta.32",
-    "@vuepress/plugin-search": "^2.0.0-beta.32",
-    "vuepress": "^2.0.0-beta.32"
+    "@vuepress/bundler-vite": "2.0.0-beta.45",
+    "@vuepress/client": "2.0.0-beta.51",
+    "@vuepress/plugin-back-to-top": "2.0.0-beta.51",
+    "@vuepress/plugin-docsearch": "2.0.0-beta.51",
+    "@vuepress/plugin-external-link-icon": "2.0.0-beta.51",
+    "@vuepress/plugin-medium-zoom": "2.0.0-beta.51",
+    "@vuepress/plugin-nprogress": "2.0.0-beta.51",
+    "@vuepress/plugin-search": "2.0.0-beta.51",
+    "vue": "^3.2.40",
+    "vuepress": "2.0.0-beta.51"
   }
 }

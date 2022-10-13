@@ -1,4 +1,4 @@
-<template><h1 id="vue3" tabindex="-1"><a class="header-anchor" href="#vue3" aria-hidden="true">#</a> vue3</h1>
+<template><div><h1 id="vue3" tabindex="-1"><a class="header-anchor" href="#vue3" aria-hidden="true">#</a> vue3</h1>
 <h2 id="区别" tabindex="-1"><a class="header-anchor" href="#区别" aria-hidden="true">#</a> 区别</h2>
 <table>
 <thead>
@@ -14,4 +14,6 @@
 </tr>
 </tbody>
 </table>
-</template>
+</div></template>
+
+

@@ -1,66 +1,23 @@
 /*
  * @Author: E-Dreamer
  * @Date: 2021-12-30 13:41:15
- * @LastEditTime: 2021-12-31 17:05:03
+ * @LastEditTime: 2022-10-13 14:31:25
  * @LastEditors: E-Dreamer
  * @Description:
  */
-// import {navbar,sidebar} from './configs'
-const navbar = {
-  zh: [
-    { text: '首页', link: '/' },
-    {
-      text: '文章',
-      children: [
-        {
-          text: 'vue3',
-          // children: ['/article/vue3.md'],
-          link:'/article/vue.html'
-        },
-      ],
-    },
-  ],
-  en: [
-    { text: 'home', link: '/en/' },
-    {
-      text: 'article',
-      children: [
-        {
-          text: 'vue3',
-          // children: ['/article/vue3.md'],
-          link:'/en/article/vue.html'
-        },
-      ],
-    },
-  ]
-}
 
-const sidebar = {
-  en:{
-    '/article/': [
-      {
-        text: 'vue2 difference',
-        // children: ['/article/vue3.md'],
-        link:'/en/article/vue.html#区别'
-      },
-    ],
-  },
-  zh:{
-    '/article/': [
-      {
-        text: '与vue2的区别',
-        // children: ['/article/vue3.md'],
-        link:'/article/vue.html#区别'
-      },
-    ],
-  }
-}
-module.exports = {
-  // open:true,
-  //base:'/',
-  //dest:'dist',
-  // 主题和它的配置
-  theme: '@vuepress/theme-default',
+
+import docsearchPlugin from '@vuepress/plugin-docsearch'
+import { defineUserConfig,defaultTheme } from 'vuepress'
+import {backToTopPlugin } from '@vuepress/plugin-back-to-top'
+import { externalLinkIconPlugin } from '@vuepress/plugin-external-link-icon'
+import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
+import { nprogressPlugin } from '@vuepress/plugin-nprogress'
+
+import {navbar,sidebar} from './configs/index'
+
+export default defineUserConfig({
+  base: '/',
   head: [
     ['link', { rel: 'icon', href: '/logo.png' }],
     [
@@ -83,39 +40,79 @@ module.exports = {
       description: 'Write down some knowledge',
     },
   },
-  // 搜索框在不同 locales 下的文字。
   plugins: [
-    [
-      '@vuepress/docsearch',
-      {
-        apiKey: '<API_KEY>',
-        indexName: '<INDEX_NAME>',
-        locales: {
-          '/': {
-            placeholder: '搜索文档',
-          },
-          '/en/': {
-            placeholder: 'Search Documentation',
+    backToTopPlugin(),
+    nprogressPlugin(),
+    externalLinkIconPlugin({
+      locales:{
+        '/':{
+          openInNewWindow: '在新窗口打开',
+        },
+        '/en/': {
+          openInNewWindow:'open in new window'
+        },
+      }
+    }),
+    mediumZoomPlugin(),
+    docsearchPlugin({
+      appId: 'appId',
+      apiKey: '10080',
+      indexName: 'vuepress',
+      locales: {
+        '/': {
+          placeholder: '搜索文档',
+          translations: {
+            button: {
+              buttonText: '搜索文档',
+              buttonAriaLabel: '搜索文档',
+            },
+            modal: {
+              searchBox: {
+                resetButtonTitle: '清除查询条件',
+                resetButtonAriaLabel: '清除查询条件',
+                cancelButtonText: '取消',
+                cancelButtonAriaLabel: '取消',
+              },
+              startScreen: {
+                recentSearchesTitle: '搜索历史',
+                noRecentSearchesText: '没有搜索历史',
+                saveRecentSearchButtonTitle: '保存至搜索历史',
+                removeRecentSearchButtonTitle: '从搜索历史中移除',
+                favoriteSearchesTitle: '收藏',
+                removeFavoriteSearchButtonTitle: '从收藏中移除',
+              },
+              errorScreen: {
+                titleText: '无法获取结果',
+                helpText: '你可能需要检查你的网络连接',
+              },
+              footer: {
+                selectText: '选择',
+                navigateText: '切换',
+                closeText: '关闭',
+                searchByText: '搜索提供者',
+              },
+              noResultsScreen: {
+                noResultsText: '无法找到相关结果',
+                suggestedQueryText: '你可以尝试查询',
+                reportMissingResultsText: '你认为该查询应该有结果？',
+                reportMissingResultsLinkText: '点击反馈',
+              },
+            },
           },
         },
+        '/en/':{
+          placeholder:'Search Documentation',
+          translations:{
+            button:{
+              buttonText: 'Search Documentation',
+              buttonAriaLabel: 'Search Documentation',
+            }
+          }
+        }
       },
-    ],
-    [
-      '@vuepress/plugin-search',
-      {
-        locales: {
-          '/': {
-            placeholder: '搜索',
-          },
-          '/en/': {
-            placeholder: 'Search',
-          },
-        },
-      },
-    ],
+    }),
   ],
-  // 配置默认主题
-  themeConfig: {
+  theme: defaultTheme({
     logo: null,
     darkMode: true, //是否启用切换夜间模式的功能。
     repo: 'https://github.com/E-Dreamer/vuepressblogs',
@@ -156,6 +153,5 @@ module.exports = {
         editLinkText: 'Edit this page on GitHub',
       },
     },
-    // 所有页面会使用相同的侧边栏
-  }
-}
+  }),
+})
