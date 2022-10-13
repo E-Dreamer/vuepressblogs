@@ -1,4 +1,6 @@
-# 放大镜效果(仿淘宝)
+# 放大镜效果
+
+## (仿淘宝)
 
 ```html
 <style>
@@ -111,5 +113,68 @@
     oMask.style.display = 'none'
     oBig.style.display = 'none'
   })
+</script>
+```
+
+## 自身放大
+
+```html
+<style>
+  #image {
+    width: 400px;
+    height: 400px;
+    background-color: #000;
+    /* 图片800*800 盒子400*400 */
+    background-image: url(https://gw.alicdn.com/imgextra/i1/2024314280/O1CN01K4cAis1hUHwQGSmnw_!!0-item_pic.jpg_Q75.jpg_.webp);
+    background-size: 400px 400px;
+    background-repeat: no-repeat;
+  }
+  #image[zoomed] {
+    background-size: 800px 800px;
+    background-position: calc(var(--x) * 100%) calc(var(--y) * 100%);
+  }
+</style>
+
+<div id="image"></div>
+
+<script>
+  const imageBox = document.querySelector('#image')
+
+  imageBox.addEventListener('mouseenter', enterHandler)
+  imageBox.addEventListener('mouseleave', leaveHandler)
+  imageBox.addEventListener('mousemove', moveHandler)
+
+  imageBox.addEventListener('touchstart', enterHandler)
+  imageBox.addEventListener('touchend', leaveHandler)
+  imageBox.addEventListener('touchmove', moveHandler)
+
+  function enterHandler(e) {
+    e.target.setAttribute('zoomed', 1)
+    moveHandler(e)
+  }
+  function moveHandler(e) {
+    const rect = e.target.getBoundingClientRect()
+    let offsetX, offsetY
+
+    if (['touchstart', 'touchmove', 'touchend'].includes(e.type)) {
+      offsetX = e.touches[0].pageX - rect.left
+      offsetY = e.touches[0].pageY - rect.top
+
+      e.preventDefault()
+    } else {
+      offsetX = e.offsetX
+      offsetY = e.offsetY
+    }
+
+    let x = offsetX / rect.width
+    let y = offsetY / rect.height
+
+    e.target.style.setProperty('--x', x)
+    e.target.style.setProperty('--y', y)
+  }
+  function leaveHandler(e) {
+    e.target.removeAttribute('zoomed')
+    moveHandler(e)
+  }
 </script>
 ```
